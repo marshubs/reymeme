@@ -32,7 +32,7 @@
                         right: 10px;
                 }
 	</style>
-	<script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js">
+	<script src="https://cdn.jsdelivr.net/gh/SH20RAJ/Sopplayer/mooviejs/js/moovie.min.js"></script>
 	</script>
 	<script>
 		var apikey = "AIzaSyAHIDPKFSVbDwk-NdlAW8n3uh2q6AJkyAA";//Your Drive Api Key
@@ -81,48 +81,25 @@ function getParameterByName(name, url = window.location.href) {
 
 
 	<script>
-    var myFP = fluidPlayer(
-        'video',	{
-	"layoutControls": {
-		"captions": {
-                "play": 'Play',
-                "pause": 'Pause',
-                "mute": 'Mute',
-                "unmute": 'Unmute',
-                "fullscreen": 'Fullscreen',
-                "exitFullscreen": 'Exit Fullscreen'
-            },
-		"timelinePreview": {
-                "file": 'thumbnails.vtt',
-                "type": 'VTT'
-            },
-		"controlBar": {
-			"autoHideTimeout": 2,
-			"animated": true,
-			"autoHide": true
-		},
-		"htmlOnPauseBlock": {
-			"html": '<button class=\"embed\" onclick=\"getembed()\">Embed</button>\n',
-			"height": null,
-			"width": null
-		},
-		"autoPlay": false,
-		"mute": false,
-		"allowTheatre": true,
-		"playPauseAnimation": false,
-		"playbackRateEnabled": true,
-		"allowDownload": false,
-		"playButtonShowing": false,
-		"fillToContainer": true,
-		"primaryColor": "#ff3d2d",
-		"posterImage": "https://cdn.discordapp.com/attachments/857845513814540319/943691005994090496/20220217_091059.png"
-	},
-	"vastOptions": {
-		"adList": [],
-		"adCTAText": false,
-		"adCTATextPosition": ""
-	}
-})
+document.addEventListener("DOMContentLoaded", function() {
+   video1 = new Moovie({
+      selector: "#example1",
+      config: {
+          controls : {
+              playtime : true,
+              mute : true,
+              volume : true,
+              subtitles : true,
+              config : true,
+              fullscreen : true,
+              submenuCaptions : true,
+              submenuOffset : true,
+              submenuSpeed : true,
+              allowLocalSubtitles : true
+          }
+      }
+   });
+});
 </script>
 </body>
 
