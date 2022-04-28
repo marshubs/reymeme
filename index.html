@@ -1,114 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-
+ <html>
 <head>
-	<meta charset="UTF-8">
-	<meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
-	<title>Mars Drive</title>
-	<link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/857845513814540319/943398929804976148/20210622_234449.png" type="image/x-icon">
-	<link href="demo-template/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<title>Shiro - Embed</title>
+<link rel="stylesheet" href="https://cdn.plyr.io/3.6.4/plyr.css">
+<link href="https://shiro.is/assets/global/css/fontawesome6/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://shiro.is/assets/css/pages/embed.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/0.5.14/hls.min.js" type="e1d3c79e882bfcf321819731-text/javascript"></script>
 
-  <!-- Moovie CSS Style -->
-  <link rel="stylesheet" type="text/css" href="css/moovie.css">
-
-  <!-- GFonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet"> 
+<style>
+			.preloader {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background: #000;
+				z-index: 50;
+			}
+			
+			.preloader span {
+				width: 56px;
+				height: 56px;
+				border: 5px solid rgb(203, 203, 203);
+				border-top: 5px solid rgba(230, 230, 230, .5);
+				border-radius: 100%;
+				animation: animate .8s linear infinite;
+			}
+			
+			@keyframes animate {
+				to {
+					transform: rotate(360deg);
+				}
+			}
+		</style>
 </head>
 <body>
-	<style>
-		body {
-			padding: 0;
-			margin: 0;
-		}
-
-		video {
-			width: 100%;
-			height: 100%;
-			position: absolute;
-		}
-                .embed {
-                        position: absolute;
-                        background: none;
-                        top: 2px;
-                        z-index: 999;
-                        color: aqua;
-                        font-family: sans-serif;
-                        font-size: 18px;
-                        border: 0;
-                        font-weight: 600;
-                        right: 10px;
-                }
-	</style>
-	<script src="https://cdn.jsdelivr.net/gh/SH20RAJ/Sopplayer/mooviejs/js/moovie.min.js"></script>
-	</script>
-	<script>
-		var apikey = "AIzaSyAHIDPKFSVbDwk-NdlAW8n3uh2q6AJkyAA";//Your Drive Api Key
-                var eid="";
-                var video="";
-                var embed="";
-
-        if(!getParameterByName('id') || getParameterByName('ib')){
-          var eid = prompt('Enter Drive Video ID :- ');
-          embed = `
-       <iframe width="100%" height="100%" scrolling="no" src="${location.href}?id=${eid}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-        gyroscope; picture-in-picture" allowfullscreen> </iframe>
-          `;
-          prompt('Here is Your Embed Code :- ',embed);
-          window.location.href = window.location.href+'?id='+eid;
-        } 
-        video = getParameterByName('id') ;
-        if(getParameterByName('ib')){
-            video = btoa(getParameterByName('ib'));
-        }
-        var vidurl = "https://www.googleapis.com/drive/v3/files/"+video+"?alt=media&key="+apikey;
-        document.write("<video controls id='video' src="+vidurl+"></video>");
-
-
-function getembed(){
-            var code = `
-<iframe width="100%" height="100%" 
-scrolling="no"
-src="${location.href}?id=${video}" 
-frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
-gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-          `;
-          prompt('Here is Your Embed Code :- ',code);
-}
-
-function getParameterByName(name, url = window.location.href) {
-    name = name.replace(/[\[\]]/g, '\\$&');
-    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-	</script>
-
-
-	<script>
-document.addEventListener("DOMContentLoaded", function() {
-   video1 = new Moovie({
-      selector: "#example1",
-      config: {
-          controls : {
-              playtime : true,
-              mute : true,
-              volume : true,
-              subtitles : true,
-              config : true,
-              fullscreen : true,
-              submenuCaptions : true,
-              submenuOffset : true,
-              submenuSpeed : true,
-              allowLocalSubtitles : true
-          }
-      }
-   });
-});
-</script>
+<div class="player--container" data-id="163710">
+<div class="server--selector">
+<div id="server--toggle" class="toggle">
+<i class="fas fa-bars"></i>
+</div>
+<div class="servers">
+<div class="server locked" data-id="1" data-slug="1">
+<i class="far fa-lock"></i>
+Shiro [B] </div>
+<div class="server locked" data-id="2" data-slug="2">
+<i class="far fa-lock"></i>
+Shiro [C] </div>
+<div class="server " data-id="3" data-slug="4">
+StreamSB </div>
+<div class="server " data-id="4" data-slug="5">
+DoodStream </div>
+<div class="server " data-id="5" data-slug="6">
+Xstreamcdn </div>
+<div class="server " data-id="6" data-slug="7">
+MP4Upload </div>
+<div class="server " data-id="7" data-slug="8">
+GogoStream </div>
+</div>
+</div>
+<div id="player--container">
+<div class="preloader"><span></span></div>
+</div>
+</div>
+<script src="https://shiro.is/assets/global/js/jQuery/jquery-3.4.1.min.js" type="e1d3c79e882bfcf321819731-text/javascript"></script>
+<script src="https://cdn.plyr.io/3.6.4/plyr.js" type="e1d3c79e882bfcf321819731-text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/crypto-js@4.0.0/crypto-js.js" type="e1d3c79e882bfcf321819731-text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.0.7/hls.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" type="e1d3c79e882bfcf321819731-text/javascript"></script>
+<script src="https://cdn.socket.io/3.1.3/socket.io.min.js" integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" crossorigin="anonymous" type="e1d3c79e882bfcf321819731-text/javascript"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" type="e1d3c79e882bfcf321819731-text/javascript"></script>
+<script src="https://shiro.is/assets/js/subtitles/subtitles-octopus.js" type="e1d3c79e882bfcf321819731-text/javascript"></script>
+<script src="https://shiro.is/assets/js/subtitles/subtitles.js?v=11.7" type="e1d3c79e882bfcf321819731-text/javascript"></script>
+<script src="https://shiro.is/assets/js/pages/embed/p_n13tNYR3JB1ibjcvr.js?v=10.1" type="e1d3c79e882bfcf321819731-text/javascript"></script>
+<script src="https://shiro.is/assets/js/pages/embed/fs_5REiOYyGjcBsIQh.js" type="e1d3c79e882bfcf321819731-text/javascript"></script>
+<script type="e1d3c79e882bfcf321819731-text/javascript">
+            var session_csrf = xrf(baes256(), 1);
+        </script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="e1d3c79e882bfcf321819731-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"70300a636d9e49b4","version":"2021.12.0","r":1,"token":"c76441049ba94b999f5cf23b53274e20","si":100}' crossorigin="anonymous"></script>
 </body>
-
 </html>
